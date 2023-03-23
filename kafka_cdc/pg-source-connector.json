@@ -1,0 +1,15 @@
+{
+    "name": "pgs-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "database.hostname": "antpost.postgres.database.azure.com",
+        "database.port": "5432",
+        "database.user": "ant",
+        "database.password": "QWERasdf123!!",
+        "database.dbname": "antpostgres",
+        "database.server.name": "ant-server",
+        "plugin.name": "wal2json"
+    }
+}
+
+

@@ -1,0 +1,43 @@
+{
+    "name": "oracle-source-connector",  
+    "config": {
+        "connector.class" : "io.debezium.connector.oracle.OracleConnector",  
+        "database.hostname" : "10.0.0.4",  
+        "database.port" : "1521",  
+        "database.user" : "c##pant",  
+        "database.password" : "QWERasdf123",   
+        "database.dbname" : "CDB1",
+        "table.include.list" : "OTABLES",
+        "database.server.name" : "oracleserver1",
+        "tasks.max" : "1",
+        "database.pdb.name" : "PDB1",  
+        "database.history":"io.debezium.relational.history.MemoryDatabaseHistory",
+        "database.history.kafka.topic": "schema-changes.otables",
+        "database.history.kafka.bootstrap.servers" : "antevh.servicebus.windows.net:9093",
+        "database.history.producer.security.protocol" : "SASL_SSL",
+        "database.history.producer.sasl.mechanism" : "PLAIN",
+        "database.history.producer.sasl.jaas.config" : "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"Endpoint=sb://antevh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yDU/QvmyEBbauyPipbqLmSnMsD36BxWQdSsjiwgzuAs=\";",
+        "database.history.consumer.security.protocol" : "SASL_SSL",
+        "database.history.consumer.sasl.mechanism" : "PLAIN",
+        "database.history.consumer.sasl.jaas.config" : "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"Endpoint=sb://antevh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yDU/QvmyEBbauyPipbqLmSnMsD36BxWQdSsjiwgzuAs=\";"
+    }
+}
+
+"database.history.producer.ssl.endpoint.identification.algorithm" : "https",
+"database.history.consumer.ssl.endpoint.identification.algorithm" : "https",
+"database.history":"io.debezium.relational.history.MemoryDatabaseHistory",
+
+#확인 # todo-connector 는 pg-source-connector.json 에서 임의로 정한 connector 이름
+curl -s http://localhost:8083/connectors/oracle-source-connector2/status
+
+#뭔가 오류가 있다면 하기의 명령어로 connetor 삭제
+curl -X DELETE http://localhost:8083/connectors/oracle-source-connector2
+
+curl -X POST -H "Content-Type: application/json" --data @oracle-source-connector.json http://localhost:8083/connectors
+
+#확인 # todo-connector 는 pg-source-connector.json 에서 임의로 정한 connector 이름
+curl -s http://localhost:8083/connectors/oracle-source-connector/status
+
+#뭔가 오류가 있다면 하기의 명령어로 connetor 삭제
+curl -X DELETE http://localhost:8083/connectors/oracle-source-connector
+
