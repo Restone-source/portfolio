@@ -1,0 +1,27 @@
+{
+  "connectionString": "InstrumentationKey=1ad571f4-c1e0-4888-80d0-82c8a722be18;IngestionEndpoint=https://koreacentral-0.in.applicationinsights.azure.com/;LiveEndpoint=https://koreacentral.livediagnostics.monitor.azure.com/",
+  "role": {
+    "name": "ant role name"
+  },
+  "preview": {
+    "sampling": {
+      "overrides": [
+        {
+          "attributes": [
+            {
+              "key": "http.url",
+              "value": "http?://localhost:8080/manager/html",
+              "matchType": "regexp"
+            }
+          ],
+          "percentage": 0
+        }
+      ]
+    }
+  },
+  "instrumentation": {
+    "logging": {
+      "level": "SEVERE"
+    }
+  }
+}

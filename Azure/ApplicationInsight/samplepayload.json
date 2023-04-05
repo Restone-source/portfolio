@@ -1,0 +1,54 @@
+{
+  "schemaId": "azureMonitorCommonAlertSchema",
+  "data": {
+    "essentials": {
+      "alertId": "/subscriptions/ac858a02-ff93-4b71-a4ea-22578a872803/providers/Microsoft.AlertsManagement/alerts/a150f75d-8292-bf76-f3e4-b38952529648",
+      "alertRule": "namealert",
+      "severity": "Sev3",
+      "signalType": "Log",
+      "monitorCondition": "Fired",
+      "monitoringService": "Log Alerts V2",
+      "alertTargetIDs": [
+        "/subscriptions/ac858a02-ff93-4b71-a4ea-22578a872803/resourcegroups/rg-ant/providers/microsoft.insights/components/insight-app"
+      ],
+      "configurationItems": [
+        "/subscriptions/ac858a02-ff93-4b71-a4ea-22578a872803/resourceGroups/RG-ANT/providers/microsoft.insights/components/Insight-app"
+      ],
+      "originAlertId": "040800e0-6baa-4aef-b48d-0e8723d04905",
+      "firedDateTime": "2022-04-12T04:04:46.7012974Z",
+      "description": "",
+      "essentialsVersion": "1.0",
+      "alertContextVersion": "1.0"
+    },
+    "alertContext": {
+      "properties": null,
+      "conditionType": "LogQueryCriteria",
+      "condition": {
+        "windowSize": "PT1M",
+        "allOf": [
+          {
+            "searchQuery": "customMetrics \n\n",
+            "metricMeasureColumn": "value",
+            "targetResourceTypes": "['microsoft.insights/components']",
+            "operator": "GreaterThan",
+            "threshold": "10",
+            "timeAggregation": "Maximum",
+            "dimensions": [],
+            "metricValue": 161,
+            "failingPeriods": {
+              "numberOfEvaluationPeriods": 1,
+              "minFailingPeriodsToAlert": 1
+            },
+            "linkToSearchResultsUI": "https://portal.azure.com#@d0e7d0cd-5b0c-49e2-bc00-2e5bf95e7ad1/blade/Microsoft_Azure_Monitoring_Logs/LogsBlade/source/Alerts.EmailLinks/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%2Fac858a02-ff93-4b71-a4ea-22578a872803%2FresourceGroups%2FRG-ANT%2Fproviders%2Fmicrosoft.insights%2Fcomponents%2FInsight-app%22%7D%5D%7D/q/eJxLLi0uyc%2F1TS0pykwuVuDiqlEoLs3NTSzKrEpVcExPL0pNTyxJTQlLzClNVbBVyE2s0CgDsTUVkioVkjLz4hNLNEoyc1OLSxJzC3QUDHN1FFKAGkBCGkYGRka6Bia6hkYhBiZWBsZWBkZ6BhAQpakJAA%3D%3D/prettify/1/timespan/2022-04-12T04%3a02%3a02.0000000Z%2f2022-04-12T04%3a03%3a02.0000000Z",
+            "linkToFilteredSearchResultsUI": "https://portal.azure.com#@d0e7d0cd-5b0c-49e2-bc00-2e5bf95e7ad1/blade/Microsoft_Azure_Monitoring_Logs/LogsBlade/source/Alerts.EmailLinks/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%2Fac858a02-ff93-4b71-a4ea-22578a872803%2FresourceGroups%2FRG-ANT%2Fproviders%2Fmicrosoft.insights%2Fcomponents%2FInsight-app%22%7D%5D%7D/q/eJxdjcsKwjAQRff9ilkm0MokdlVQ8APciQs3kjRDDXSsJBNf9OO1uPOuDgcOty9ZJt6TpNhnqKoZcmF2Kb4JdsOQaHBC4ejGQrABdk91X1iDf4GP17MTJZEpi%2BNbDYZrCN9gUcqitQ22jbEHbDtcd2hX%2BNtJ6xkeF0oEMoWp%2BJHU35uGLRj8AA%3D%3D/prettify/1/timespan/2022-04-12T04%3a02%3a02.0000000Z%2f2022-04-12T04%3a03%3a02.0000000Z",
+            "linkToSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/a713c5d0-1957-419c-8b33-a5bfb500da32/query?query=customMetrics%20%0A%0A%7C%20summarize%20AggregatedValue%20%3D%20max%28value%29%20by%20bin_at%28timestamp%2C%201m%2C%20datetime%282022-04-12T04%3A03%3A02.0000000Z%29%29&timespan=2022-04-12T04%3a02%3a02.0000000Z%2f2022-04-12T04%3a03%3a02.0000000Z",
+            "linkToFilteredSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/a713c5d0-1957-419c-8b33-a5bfb500da32/query?query=customMetrics%20%0A%0A%7C%20summarize%20AggregatedValue%20%3D%20max%28value%29%20by%20bin_at%28timestamp%2C%201m%2C%20datetime%282022-04-12T04%3A03%3A02.0000000Z%29%29%7C%20where%20todouble%28AggregatedValue%29%20%3E%2010&timespan=2022-04-12T04%3a02%3a02.0000000Z%2f2022-04-12T04%3a03%3a02.0000000Z"
+          }
+        ],
+        "windowStartTime": "2022-04-12T04:02:02Z",
+        "windowEndTime": "2022-04-12T04:03:02Z"
+      }
+    },
+    "customProperties": null
+  }
+}

@@ -1,0 +1,2 @@
+ResourceGroupName,Location,VMName,VNetName,VNetRGName,SubnetName,PipFlag,PrivateIPAddress,VMSize,SADiagFlag,SADiagName,Kind,Tier,SAResourceGroup,AVSetName,OSType,PublisherName,Offer,Skus,Version,OSDiskType,OsDiskSize,NSGName,NSGRgName,DataDiskSize,DataDiskType,Zone,HostGroupName,HostRgName,HostName
+RG,koreacentral,vm1,vnet1,RG,subnet1,,10.0.0.4,Standard_F8s_v2,Y,sadiag,,,RG,,Windows,MicrosoftWindowsServer,WindowsServer,2016-Datacenter,latest,Premium_LRS,127,NSG1,RG,512,Premium_LRS,,HG,RG,HOST1

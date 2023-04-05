@@ -1,0 +1,42 @@
+{
+  "attachments": [
+    {
+      "color": @{variables('severity-color')},
+      "pretext": "Pretext",
+      "title": "Application Insight alert",
+      "title_link": "https://portal.azure.com",
+      "author_icon": "https://placeimg.com/16/16/people",
+      "author_name": "author_name",
+      "author_link": "http://flickr.com/bobby/",
+      "text": "It's just `test` messeges",
+      "fields": [
+        {
+          "short": false,
+          "title": "Alert ID",
+          "value": @{triggerBody()?['data']?['essentials']?['originAlertId']}
+        },
+        {
+          "short": true,
+          "title": "Value",
+          "value": @{items('For_each')?['metricValue']}
+        },
+        {
+          "short": true,
+          "title": "Threshold",
+          "value": @{items('For_each')?['threshold']}
+        },
+        {
+          "short": true,
+          "title": "Time",
+          "value": @{triggerBody()?['data']?['essentials']?['firedDateTime']}
+        }
+      ],
+      "footer": "footer image",
+      "footer_icon": "https://antsa.blob.core.windows.net/imageant/KKAKKAO.png",
+      "mrkdwn_in": [
+        "text"
+      ],
+      "thumb_url": "https://cdn.pixabay.com/photo/2021/11/15/23/30/bell-6799634_1280.png"
+    }
+  ]
+}
